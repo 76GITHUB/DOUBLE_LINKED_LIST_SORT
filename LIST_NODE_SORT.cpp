@@ -189,7 +189,7 @@ void SerchNode(PLIST pList) {
 	return;
 }
 
-void DeleteNode(PLIST pList) {//노드삭제
+void DeleteNode(PLIST pList) {
 	system("cls");
 	cout << "=============학생삭제================" << endl;
 	cout << "삭제할 학생의 이름을 입력하세요.";
@@ -203,6 +203,7 @@ void DeleteNode(PLIST pList) {//노드삭제
 			delete pNode;
 			--pList->iSize;
 			cout << "학생삭제완료" << endl;
+			return;
 		}	
 		pNode = pNode->pNext;
 	}
@@ -230,8 +231,8 @@ void Sort(PLIST pList) {
 	PNODE pFirst = pList->pHead->pNext;
 	PNODE pSecond = pFirst->pNext;
 
-	if (pFirst == NULL || pSecond == NULL) {
-		cout << "정렬을 하려면 최소2명이상의학생이 필요합니다" << endl;
+	if (pFirst == NULL|| pSecond==NULL) {
+		cout << "정렬할 학생이 없습니다." << endl;
 		return;
 	}
 
